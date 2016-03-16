@@ -167,7 +167,7 @@ A producer introduces events from the outside world to the event-processing netw
   - **File** – the producer's events are read from a given file. A **file **producer has the following additional built-in parameter:
       - **filename** – full path file name.
   - **Timed** – timed file adapter. The events from the file will not be injected at a constant rate. They will be based on the relative difference of the event’s OccurenceTime attribute value as specified in the event row in the file from start of injection. The first event will always be injected immediately at the start of the adapter. Its occurrence time is considered as time zero. The other events will be injected based on the relative difference between their occurrence time and that of the first event.<br>
-  For example, if the second event’s OccurenceTime (timestamp representation) is 134566788 and the first event’s OccurrenceTime is 134956587, then the first event will be injected at time 0, while the second one will be injected 134956587  134566788  = 389799 millisecs later.<br>
+  For example, if the second event’s OccurenceTime (timestamp representation) is 134566788 and the first event’s OccurrenceTime is 134956587, then the first event will be injected at time 0, while the second one will be injected 134956587 - 134566788  = 389799 millisecs later.<br>
   The timed adapter has the same properties as the file adapter.    
   - **REST** – This adapter is a REST client that GETs events from an external REST service periodically. A REST type producer has the following additional built-in parameters: 
       - **URL** – the fully qualified URL of the REST service for event pull operation using a GET method.
